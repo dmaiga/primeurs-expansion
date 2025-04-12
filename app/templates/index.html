@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %}Accueil - PRIMEURS EXPANSION{% endblock %}
+
+{% block content %}
+<style>
+    .product-img {
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    </style>
+
+<!-- Section Hero -->
+<section class="bg-light py-5 mb-5 text-center">
+  <div class="container">
+    <h1 class="display-5 fw-bold">Des produits frais, directement d’Afrique de l’Ouest</h1>
+    <p class="lead">PRIMEURS EXPANSION – Exportateur de fruits et légumes tropicaux de qualité</p>
+    <a href="{{ url_for('products') }}" class="btn btn-success btn-lg mt-3">Voir nos produits</a>
+  </div>
+</section>
+
+<!-- Présentation rapide -->
+<section class="container mb-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h2>Qui sommes-nous ?</h2>
+      <p>
+        PRIMEURS EXPANSION est une entreprise basée à Bamako, spécialisée dans l’exportation de fruits et légumes frais, en particulier la mangue. Nous travaillons avec des producteurs locaux et garantissons fraîcheur, traçabilité et respect des normes internationales.
+      </p>
+      <a href="{{ url_for('about') }}" class="btn btn-outline-success">En savoir plus</a>
+    </div>
+    <div class="col-md-6">
+      <img src="/static/images/image-hero.jpeg" alt="Panier de fruit" class="img-fluid rounded shadow-sm">
+    </div>
+  </div>
+</section>
+
+<!-- Nos Produits phares -->
+<section class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Nos variétés de mangues</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="/static/images/mangue-kent.jpg" class="card-img-top product-img" alt="Mangue Kent">
+          <div class="card-body">
+            <h5 class="card-title">Mangue Kent</h5>
+            <p class="card-text">Chair ferme, saveur douce et peu fibreuse.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="/static/images/mangue-keitt.jpg" class="card-img-top product-img" alt="Mangue Keitt">
+          <div class="card-body">
+            <h5 class="card-title">Mangue Keitt</h5>
+            <p class="card-text">Gros calibre et très bonne conservation.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="/static/images/mangue-ataulfo.jpg" class="card-img-top product-img" alt="Mangue Ataulfo">
+          <div class="card-body">
+            <h5 class="card-title">Mangue Ataulfo</h5>
+            <p class="card-text">Petite, très sucrée et délicieusement fondante.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a href="{{ url_for('products') }}" class="btn btn-success">Tous les produits</a>
+    </div>
+  </div>
+</section>
+
+<!-- Engagements -->
+<section class="container py-5">
+  <h2 class="text-center mb-4">Nos engagements</h2>
+  <div class="row text-center">
+    <div class="col-md-3">
+      <i class="bi bi-shield-check" style="font-size: 2rem;"></i>
+      <p class="mt-2">Qualité garantie</p>
+    </div>
+    <div class="col-md-3">
+      <i class="bi bi-globe" style="font-size: 2rem;"></i>
+      <p class="mt-2">Export certifié</p>
+    </div>
+    <div class="col-md-3">
+      <i class="bi bi-truck" style="font-size: 2rem;"></i>
+      <p class="mt-2">Livraison fiable</p>
+    </div>
+    <div class="col-md-3">
+      <i class="bi bi-people" style="font-size: 2rem;"></i>
+      <p class="mt-2">Commerce équitable</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact rapide -->
+<section class="bg-success text-white text-center py-5">
+  <div class="container">
+    <h2>Une question ? Une commande ?</h2>
+    <p class="lead">Contactez-nous dès maintenant par email ou WhatsApp.</p>
+    <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg me-2">Nous contacter</a>
+    <a href="https://wa.me/123456789" class="btn btn-outline-light btn-lg">WhatsApp</a>
+  </div>
+</section>
+
+{% endblock %}

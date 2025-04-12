@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block title %}Nos Produits - PRIMEURS EXPANSION{% endblock %}
+
+{% block content %}
+
+<style>
+    .card-img-top {
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    </style>
+<div class="container mt-4">
+  <h1 class="text-center mb-5">Nos Produits</h1>
+  
+  <!-- Filtres par Catégorie -->
+  <div class="text-center mb-4">
+    <a href="#mangues" class="btn btn-outline-success mx-2">Mangues</a>
+    <a href="#fruits" class="btn btn-outline-success mx-2">Autres Fruits</a>
+    <a href="#legumes" class="btn btn-outline-success mx-2">Légumes</a>
+  </div>
+
+  <!-- Section Mangues -->
+  <section id="mangues" class="mb-5">
+    <h2 class="mb-4">Nos Variétés de Mangues</h2>
+    <div class="row">
+      <!-- Produit 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="/static/images/mangue-kent.jpg" class="card-img-top" alt="Mangue Kent">
+          <div class="card-body">
+            <h5 class="card-title">Mangue Kent</h5>
+            <p class="card-text">
+              <strong>Origine :</strong> Mali<br>
+              <strong>Saison :</strong> Avril à Juillet<br>
+              <strong>Caractéristiques :</strong> Chair ferme, peu fibreuse, saveur sucrée.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Produit 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="/static/images/mangue-keitt.jpg" class="card-img-top" alt="Mangue Keitt">
+          <div class="card-body">
+            <h5 class="card-title">Mangue Keitt</h5>
+            <p class="card-text">
+              <strong>Origine :</strong> Côte d'Ivoire<br>
+              <strong>Saison :</strong> Juin à Septembre<br>
+              <strong>Caractéristiques :</strong> Gros calibre, excellente conservation.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Produit 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="/static/images/mangue-ataulfo.jpg" class="card-img-top" alt="Mangue Ataulfo">
+          <div class="card-body">
+            <h5 class="card-title">Mangue Ataulfo</h5>
+            <p class="card-text">
+              <strong>Origine :</strong> Burkina Faso<br>
+              <strong>Saison :</strong> Mars à Mai<br>
+              <strong>Caractéristiques :</strong> Petite taille, goût très sucré.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Autres Fruits -->
+  <section id="fruits" class="mb-5">
+    <h2 class="mb-4">Autres Fruits</h2>
+    <div class="row">
+      <!-- Produit 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="/static/images/ananas.jpg" class="card-img-top" alt="Ananas">
+          <div class="card-body">
+            <h5 class="card-title">Ananas Bio</h5>
+            <p class="card-text">
+              <strong>Origine :</strong> Ghana<br>
+              <strong>Disponibilité :</strong> Toute l'année<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

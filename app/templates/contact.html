@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact - PRIMEURS EXPANSION{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Contactez-nous</h1>
+
+  <div class="row">
+    <!-- Formulaire de contact -->
+    <div class="col-md-6 mb-4">
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Nom</label>
+          <input type="text" class="form-control" id="name" placeholder="Votre nom">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="adresse@email.com">
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Votre message ici..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Envoyer</button>
+      </form>
+    </div>
+
+    <!-- Coordonnées + réseaux -->
+    <div class="col-md-6">
+      <h4>Nos coordonnées</h4>
+      <p><strong>Email :</strong> contact@primeursexpansion.com</p>
+      <p><strong>Téléphone :</strong> +223 76 00 00 00</p>
+      <p><strong>Adresse :</strong> Bamako, Mali</p>
+
+      <div class="mt-4">
+        <h5>Réseaux sociaux</h5>
+        <a href="https://facebook.com" target="_blank" class="me-3">
+          <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook">
+        </a>
+        <a href="https://instagram.com" target="_blank" class="me-3">
+          <img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram">
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="me-3">
+          <img src="https://cdn-icons-png.flaticon.com/24/733/733561.png" alt="LinkedIn">
+        </a>
+      </div>
+
+      <div class="mt-4">
+        <a href="https://wa.me/22376000000" target="_blank" class="btn btn-outline-success">
+          <img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" class="me-2" alt="WhatsApp">
+          Discuter sur WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
