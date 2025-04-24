@@ -3,110 +3,223 @@
 {% block title %}Accueil - PRIMEURS EXPANSION{% endblock %}
 
 {% block content %}
-<style>
-    .product-img {
-      height: 250px;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-    </style>
-
-<!-- Section Hero -->
-<section class="bg-light py-5 mb-5 text-center">
-  <div class="container">
-    <h1 class="display-5 fw-bold">Des produits frais, directement d’Afrique de l’Ouest</h1>
-    <p class="lead">PRIMEURS EXPANSION – Exportateur de fruits et légumes tropicaux de qualité</p>
-    <a href="{{ url_for('products') }}" class="btn btn-success btn-lg mt-3">Voir nos produits</a>
-  </div>
-</section>
-
-<!-- Présentation rapide -->
-<section class="container mb-5">
-  <div class="row align-items-center">
-    <div class="col-md-6">
-      <h2>Qui sommes-nous ?</h2>
-      <p>
-        PRIMEURS EXPANSION est une entreprise basée à Bamako, spécialisée dans l’exportation de fruits et légumes frais, en particulier la mangue. Nous travaillons avec des producteurs locaux et garantissons fraîcheur, traçabilité et respect des normes internationales.
-      </p>
-      <a href="{{ url_for('about') }}" class="btn btn-outline-success">En savoir plus</a>
-    </div>
-    <div class="col-md-6">
-      <img src="/static/images/image-hero.jpeg" alt="Panier de fruit" class="img-fluid rounded shadow-sm">
+<!-- Hero Section -->
+<section class="hero-section bg-success bg-opacity-10 py-5">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold mb-4">Exportateur de mangues premium d'Afrique de l'Ouest</h1>
+        <p class="lead mb-4">Nous connectons les meilleurs producteurs maliens aux marchés internationaux avec des produits frais et certifiés.</p>
+        <div class="d-flex gap-3">
+          <a href="{{ url_for('products') }}" class="btn btn-success btn-lg px-4">
+            <i class="bi bi-basket me-2"></i> Nos produits
+          </a>
+          <a href="{{ url_for('contact') }}" class="btn btn-outline-success btn-lg px-4">
+            <i class="bi bi-chat-dots me-2"></i> Nous contacter
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-4 mt-lg-0">
+        <img src="{{ url_for('static', filename='images/image-hero.jpeg') }}" 
+             alt="Mangues fraîches PRIMEURS EXPANSION" 
+             class="img-fluid rounded shadow">
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Nos Produits phares -->
-<section class="bg-light py-5">
+<!-- Valeurs -->
+<section class="py-5 bg-light">
   <div class="container">
-    <h2 class="text-center mb-4">Nos variétés de mangues</h2>
-    <div class="row g-4 text-center">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="/static/images/mangue-kent.jpg" class="card-img-top product-img" alt="Mangue Kent">
-          <div class="card-body">
-            <h5 class="card-title">Mangue Kent</h5>
-            <p class="card-text">Chair ferme, saveur douce et peu fibreuse.</p>
+    <h2 class="text-center mb-5">Pourquoi choisir PRIMEURS EXPANSION ?</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="icon-box bg-success bg-opacity-10 text-success mb-3 mx-auto">
+              <i class="bi bi-award-fill fs-3"></i>
+            </div>
+            <h5>Qualité certifiée</h5>
+            <p class="small">Normes internationales HACCP et GlobalGAP</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="/static/images/mangue-keitt.jpg" class="card-img-top product-img" alt="Mangue Keitt">
-          <div class="card-body">
-            <h5 class="card-title">Mangue Keitt</h5>
-            <p class="card-text">Gros calibre et très bonne conservation.</p>
+      <div class="col-md-3">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="icon-box bg-success bg-opacity-10 text-success mb-3 mx-auto">
+              <i class="bi bi-tree-fill fs-3"></i>
+            </div>
+            <h5>Agriculture durable</h5>
+            <p class="small">Pratiques respectueuses de l'environnement</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="/static/images/mangue-ataulfo.jpg" class="card-img-top product-img" alt="Mangue Ataulfo">
-          <div class="card-body">
-            <h5 class="card-title">Mangue Ataulfo</h5>
-            <p class="card-text">Petite, très sucrée et délicieusement fondante.</p>
+      <div class="col-md-3">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="icon-box bg-success bg-opacity-10 text-success mb-3 mx-auto">
+              <i class="bi bi-speedometer2 fs-3"></i>
+            </div>
+            <h5>Livraison rapide</h5>
+            <p class="small">Expédition sous 48h après récolte</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="icon-box bg-success bg-opacity-10 text-success mb-3 mx-auto">
+              <i class="bi bi-people-fill fs-3"></i>
+            </div>
+            <h5>Commerce équitable</h5>
+            <p class="small">Rémunération juste des producteurs</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Produits phares -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Nos produits phares</h2>
+      <p class="lead">Découvrez notre sélection premium</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card product-card h-100 border-0 shadow-sm">
+          <img src="{{ url_for('static', filename='images/mangue-kent.jpg') }}" 
+               class="card-img-top product-img" 
+               alt="Mangues Kent">
+          <div class="card-body text-center">
+            <h5 class="card-title">Mangues Kent</h5>
+            <p class="card-text text-success">Saison : Avril à Juillet</p>
+            <a href="{{ url_for('products') }}#mangues" class="btn btn-sm btn-outline-success">Voir détails</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-3">
+        <div class="card product-card h-100 border-0 shadow-sm">
+          <img src="{{ url_for('static', filename='images/haricot_vert.jpg') }}" 
+               class="card-img-top product-img" 
+               alt="Haricots verts">
+          <div class="card-body text-center">
+            <h5 class="card-title">Haricots Verts</h5>
+            <p class="card-text text-success">Disponible toute l'année</p>
+            <a href="{{ url_for('products') }}#legumes" class="btn btn-sm btn-outline-success">Voir détails</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-3">
+        <div class="card product-card h-100 border-0 shadow-sm">
+          <img src="{{ url_for('static', filename='images/gombos.jpg') }}" 
+               class="card-img-top product-img" 
+               alt="Gombo">
+          <div class="card-body text-center">
+            <h5 class="card-title">Gombo</h5>
+            <p class="card-text text-success">Produit local</p>
+            <a href="{{ url_for('products') }}#legumes" class="btn btn-sm btn-outline-success">Voir détails</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-3">
+        <div class="card product-card h-100 border-0 shadow-sm">
+          <img src="{{ url_for('static', filename='images/arachides.jpg') }}" 
+               class="card-img-top product-img" 
+               alt="Arachides">
+          <div class="card-body text-center">
+            <h5 class="card-title">Arachides</h5>
+            <p class="card-text text-success">Qualité export</p>
+            <a href="{{ url_for('products') }}#autres" class="btn btn-sm btn-outline-success">Voir détails</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <div class="text-center mt-4">
-      <a href="{{ url_for('products') }}" class="btn btn-success">Tous les produits</a>
+      <a href="{{ url_for('products') }}" class="btn btn-success px-4">
+        <i class="bi bi-arrow-right-circle me-2"></i>Voir tous nos produits
+      </a>
     </div>
   </div>
 </section>
 
-<!-- Engagements -->
-<section class="container py-5">
-  <h2 class="text-center mb-4">Nos engagements</h2>
-  <div class="row text-center">
-    <div class="col-md-3">
-      <i class="bi bi-shield-check" style="font-size: 2rem;"></i>
-      <p class="mt-2">Qualité garantie</p>
-    </div>
-    <div class="col-md-3">
-      <i class="bi bi-globe" style="font-size: 2rem;"></i>
-      <p class="mt-2">Export certifié</p>
-    </div>
-    <div class="col-md-3">
-      <i class="bi bi-truck" style="font-size: 2rem;"></i>
-      <p class="mt-2">Livraison fiable</p>
-    </div>
-    <div class="col-md-3">
-      <i class="bi bi-people" style="font-size: 2rem;"></i>
-      <p class="mt-2">Commerce équitable</p>
-    </div>
-  </div>
-</section>
-
-<!-- Contact rapide -->
-<section class="bg-success text-white text-center py-5">
+<!-- Processus -->
+<section class="py-5 bg-light">
   <div class="container">
-    <h2>Une question ? Une commande ?</h2>
-    <p class="lead">Contactez-nous dès maintenant par email ou WhatsApp.</p>
-    <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg me-2">Nous contacter</a>
-    <a href="https://wa.me/123456789" class="btn btn-outline-light btn-lg">WhatsApp</a>
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="{{ url_for('static', filename='images/ouvriers2.JPG') }}" 
+             alt="Processus de production" 
+             class="img-fluid rounded shadow">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="mb-4">Notre processus de qualité</h2>
+        <div class="process-step d-flex mb-4">
+          <div class="step-number bg-success text-white rounded-circle me-3">1</div>
+          <div>
+            <h5>Récolte sélective</h5>
+            <p>Cueillette manuelle à maturité optimale par des équipes formées</p>
+          </div>
+        </div>
+        <div class="process-step d-flex mb-4">
+          <div class="step-number bg-success text-white rounded-circle me-3">2</div>
+          <div>
+            <h5>Tri et calibration</h5>
+            <p>Contrôle qualité rigoureux selon les standards internationaux</p>
+          </div>
+        </div>
+        <div class="process-step d-flex">
+          <div class="step-number bg-success text-white rounded-circle me-3">3</div>
+          <div>
+            <h5>Expédition rapide</h5>
+            <p>Stockage réfrigéré et transport sous atmosphère contrôlée</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                url('{{ url_for("static", filename="images/bg-pattern.png") }}');
+  }
+  .product-img {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #28a745;
+  }
+  .product-card {
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-10px);
+  }
+  .icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .process-step .step-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+</style>
 {% endblock %}

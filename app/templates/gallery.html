@@ -3,182 +3,261 @@
 {% block title %}Galerie - PRIMEURS EXPANSION{% endblock %}
 
 {% block content %}
- 
-  <!-- Styles personnalisés -->
-  <style>
-    .carousel-img {
-      height: 800px;
-      object-fit: cover;
-    }
-    
-    .carousel-caption {
-      font-size: 0.9rem;
-      padding: 0.75rem;
-    }
-    
-    .img-thumbnail {
-      height: 60px;
-      width: 80px;
-      object-fit: cover;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    
-    .img-thumbnail:hover {
-      transform: scale(1.05);
-      border: 2px solid #198754;
-    }
-    .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.6); /* cercle noir semi-transparent */
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-size: 1.5rem 1.5rem;
-    background-position: center;
-    background-repeat: no-repeat;
+<style>
+  .gallery-section {
+    padding: 2rem 0;
+    border-bottom: 1px solid #eee;
   }
-  
-  .carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.5 0L4.09 1.41 6.67 4 4.09 6.59 5.5 8l4-4z' transform='rotate(180 4 4)'/%3E%3C/svg%3E");
+  .gallery-title {
+    color: #28a745;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
   }
-  
-  .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.5 0L1.09 1.41 3.67 4 1.09 6.59 2.5 8l4-4z'/%3E%3C/svg%3E");
+  .gallery-img-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
   }
-  
-  .section-img {
-  height: 400px;
-  width: 100%;
-  object-fit: contain; /* anciennement "cover" */
-  border-radius: 8px;
-  background-color: #f5f5f5; /* ajoute un fond neutre derrière les images */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-    </style>
-  
-  
-<div class="container mt-5">
-  <h1 class="text-center mb-4">Galerie</h1>
- 
-  <p class="text-center mb-5">Découvrez notre univers à travers quatre dimensions essentielles de notre activité.<br>
-    la richesse de nos produits, la rigueur de notre production, la qualité de nos infrastructures et l'efficacité de notre logistique.
-  </p>
-  
+  .gallery-img-container:hover {
+    transform: translateY(-5px);
+  }
+  .gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 100, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .gallery-img-container:hover .gallery-caption {
+    transform: translateY(0);
+  }
+  .category-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #28a745;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+</style>
 
-<!-- Section 1 : Variétés (Carrousel compact et miniatures) -->
-<section class="mb-5">
-    <h2 class="mb-3">🌿 Variétés de produits</h2>
-<p class="text-muted">Un éventail de fruits et légumes rigoureusement sélectionnés pour leur qualité et leur fraîcheur.</p>
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h1 class="display-5 fw-bold">Notre Galerie</h1>
+    <p class="lead">Découvrez l'excellence de PRIMEURS EXPANSION à travers nos images</p>
+  </div>
 
-    <!-- Carrousel -->
-    <div id="carrouselMangues" class="carousel slide mb-3" data-bs-ride="carousel" data-bs-interval="3000">
-      <div class="carousel-inner rounded shadow">
-  
-        <div class="carousel-item active">
-          <img src="/static/images/mangue-kent.jpg" class="section-img" alt="Mangue Kent">
-          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+  <!-- Section Produits -->
+  <section class="gallery-section">
+    <h2 class="gallery-title"><i class="bi bi-basket"></i> Nos Produits</h2>
+    <div class="row g-4">
+      <!-- Mangue Kent -->
+      <div class="col-md-4 col-6">
+        <div class="gallery-img-container">
+          <span class="category-badge">Mangues</span>
+          <img src="/static/images/mangue-kent.jpg" class="gallery-img" alt="Mangue Kent">
+          <div class="gallery-caption">
             <h5>Mangue Kent</h5>
-            <p>Chair ferme, peu fibreuse, saveur sucrée.</p>
-          </div>
-        </div>
-  
-        <div class="carousel-item">
-          <img src="/static/images/mangue-keitt.jpg" class="section-img" alt="Mangue Keitt">
-          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-            <h5>Mangue Keitt</h5>
-            <p>Gros calibre, excellente conservation.</p>
-          </div>
-        </div>
-  
-        <div class="carousel-item">
-          <img src="/static/images/mangue-ataulfo.jpg" class="section-img" alt="Mangue Ataulfo">
-          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-            <h5>Mangue Ataulfo</h5>
-            <p>Petite taille, goût très sucré.</p>
+            <p class="small mb-0">Saison : Avril à Juillet</p>
           </div>
         </div>
       </div>
-  
-      <!-- Contrôles flèches -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carrouselMangues" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Précédent</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carrouselMangues" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Suivant</span>
-      </button>
-    </div>
-  
-   
- 
-  
-      <!-- Flèches de navigation -->
-     
-    </div>
-  
-    <!-- Miniatures (indicateurs personnalisés) -->
-    <div class="d-flex justify-content-center gap-3">
-      <img src="/static/images/mangue-kent.jpg" alt="Kent" class="img-thumbnail" style="width: 80px; cursor:pointer;" data-bs-target="#carrouselMangues" data-bs-slide-to="0" class="active">
-      <img src="/static/images/mangue-keitt.jpg" alt="Keitt" class="img-thumbnail" style="width: 80px; cursor:pointer;" data-bs-target="#carrouselMangues" data-bs-slide-to="1">
-      <img src="/static/images/mangue-ataulfo.jpg" alt="Ataulfo" class="img-thumbnail" style="width: 80px; cursor:pointer;" data-bs-target="#carrouselMangues" data-bs-slide-to="2">
-    </div>
-  </section>
-  
-
-  <!-- Section 2 : Production -->
-  <section class="mb-5">
-    <h2 class="mb-3">👩🏽‍🌾 Production</h2>
-    <p class="text-muted">Des champs à la cueillette : un savoir-faire local et un soin rigoureux.</p>
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <img src="/static/images/vue-champs-mangue.jpg" class="section-img" alt="Champ de manguiers">
-      </div>
-      <div class="col-md-4">
-        <img src="/static/images/travailleur-recoltant.jpeg" class="section-img" alt="Main tenant une mangue">
-      </div>
-      <div class="col-md-4">
-        <img src="/static/images/recolte-mangue.jpg" class="section-img" alt="Récolte de mangues">
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 3 : Infrastructures -->
-  <section class="mb-5">
-    <h2 class="mb-3">🏢 Infrastructures</h2>
-    <p class="text-muted">Des installations modernes pour garantir la fraîcheur et la conformité des produits.</p>
-        <div class="row g-4">
-       <div class="col-md-4">
-            <img src="/static/images/groupe-perso.jpg" class="section-img" alt="Équipe logistique">
-        </div>
-        <div class="col-md-4">
-           <img src="/static/images/entrepot-stockage.jpg" class="section-img" alt="Entrepôt moderne">
-        </div>
-        <div class="col-md-4">
-           <img src="/static/images/poste-tri.jpg" class="section-img" alt="Poste de tri et conditionnement">
-        </div>
       
+      <!-- Mangue Keitt -->
+      <div class="col-md-4 col-6">
+        <div class="gallery-img-container">
+          <span class="category-badge">Mangues</span>
+          <img src="/static/images/mangue-keitt.jpg" class="gallery-img" alt="Mangue Keitt">
+          <div class="gallery-caption">
+            <h5>Mangue Keitt</h5>
+            <p class="small mb-0">Saison : Juin à Septembre</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Haricots verts -->
+      <div class="col-md-4 col-6">
+        <div class="gallery-img-container">
+          <span class="category-badge">Légumes</span>
+          <img src="/static/images/haricot_vert.jpg" class="gallery-img" alt="Haricots verts">
+          <div class="gallery-caption">
+            <h5>Haricots Verts</h5>
+            <p class="small mb-0">Disponible toute l'année</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gombo -->
+      <div class="col-md-4 col-6">
+        <div class="gallery-img-container">
+          <span class="category-badge">Légumes</span>
+          <img src="/static/images/gombos.jpg" class="gallery-img" alt="Gombo">
+          <div class="gallery-caption">
+            <h5>Gombo</h5>
+            <p class="small mb-0">Produit local</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Arachides -->
+      <div class="col-md-4 col-6">
+        <div class="gallery-img-container">
+          <span class="category-badge">Produits secs</span>
+          <img src="/static/images/arachides.jpg" class="gallery-img" alt="Arachides">
+          <div class="gallery-caption">
+            <h5>Arachides</h5>
+            <p class="small mb-0">Qualité export</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Ananas -->
+      <div class="col-md-4 col-6">
+        <div class="gallery-img-container">
+          <span class="category-badge">Fruits</span>
+          <img src="/static/images/ananas.jpg" class="gallery-img" alt="Ananas">
+          <div class="gallery-caption">
+            <h5>Ananas</h5>
+            <p class="small mb-0">Sucré et juteux</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Section 4 : Logistique -->
-  <section class="mb-5">
-    <h2 class="mb-3">🚛 Logistique</h2>
-    <p class="text-muted">Fiabilité, traçabilité et rapidité jusqu’au client final.</p>
+<!-- Section Production -->
+<section class="gallery-section">
+  <h2 class="gallery-title"><i class="bi bi-tree"></i> Production</h2>
+  <div class="row g-4">
+    <!-- Champ de manguiers -->
+    <div class="col-md-4 col-6">
+      <div class="gallery-img-container">
+        <img src="/static/images/vue-champs-mangue.jpg" class="gallery-img" alt="Champ de manguiers">
+        <div class="gallery-caption">
+          <h5>Vergers de manguiers</h5>
+          <p class="small mb-0">Agriculture durable</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Récolte -->
+    <div class="col-md-4 col-6">
+      <div class="gallery-img-container">
+        <img src="/static/images/M7.jpg" class="gallery-img" alt="Récolte de mangues">
+        <div class="gallery-caption">
+          <h5>Récolte manuelle</h5>
+          <p class="small mb-0">Cueillette à maturité optimale</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Panier mangues -->
+    <div class="col-md-4 col-6">
+      <div class="gallery-img-container">
+        <img src="/static/images/recolte-mangue.jpg" class="gallery-img" alt="Panier de mangues">
+        <div class="gallery-caption">
+          <h5>Tri initial</h5>
+          <p class="small mb-0">Première sélection qualité</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fruits étalés -->
+    <div class="col-md-4 col-6">
+      <div class="gallery-img-container">
+        <img src="/static/images/gombos_caises.jpg" class="gallery-img" alt="Fruits étalés">
+        <div class="gallery-caption">
+          <h5>Gombo</h5>
+          </div>
+      </div>
+    </div>
+
+    <!-- Ouvriers -->
+    <div class="col-md-4 col-6">
+      <div class="gallery-img-container">
+        <img src="/static/images/ouvriers2.jpg" class="gallery-img" alt="Ouvriers">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Section Infrastructures -->
+  <section class="gallery-section">
+    <h2 class="gallery-title"><i class="bi bi-building"></i> Infrastructures</h2>
     <div class="row g-4">
-      <div class="col-md-4">
-        <img src="/static/images/camion-transport.jpg" class="section-img" alt="Camion de livraison">
+      <!-- Entrepôt -->
+      <div class="col-md-4 col-6">
+        <div class="gallery-img-container">
+          <img src="/static/images/machine.jpg" class="gallery-img" alt="Entrepôt de stockage">
+          <div class="gallery-caption">
+            <h5>Entrepôt réfrigéré</h5>
+            <p class="small mb-0">12°C pour une conservation optimale</p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <img src="/static/images/document-export.jpg" class="section-img" alt="Documents d’export">
+      
+      <!-- Poste de tri -->
+      <div class="col-md-4 col-6">
+        <div class="gallery-img-container">
+          <img src="/static/images/poste-tri.jpg" class="gallery-img" alt="Poste de tri">
+          <div class="gallery-caption">
+            <h5>Poste de tri</h5>
+            <p class="small mb-0">Calibrage et contrôle qualité</p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <img src="/static/images/fruits-etale.jpg" class="section-img" alt="Livraison client">
+      
+      <!-- Machine -->
+      <div class="col-md-4 col-6">
+        <div class="gallery-img-container">
+          <img src="/static/images/panier_mangue_ouvrier.jpg" class="gallery-img" alt="Machine de conditionnement">
+          <div class="gallery-caption">
+            <h5>Conditionnement</h5>
+            <p class="small mb-0">Préparation pour l'export</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
+<!-- Section Professionnels -->
+<section class="gallery-section">
+  <h2 class="gallery-title"><i class="bi bi-people-fill"></i> Professionnels</h2>
+  <div class="row g-4">
+    <!-- Personnel 1 -->
+    <div class="col-md-4 col-6">
+      <div class="gallery-img-container">
+        <img src="/static/images/perso1.jpg" class="gallery-img" alt="Membre de l'équipe">
+      </div>
+    </div>
+    
+    <!-- Panier mangues -->
+    <div class="col-md-4 col-6">
+      <div class="gallery-img-container">
+        <img src="/static/images/panier_mangue.jpg" class="gallery-img" alt="Récolte de mangues">
+      </div>
+    </div>
+    
+    <!-- Ouvrier -->
+    <div class="col-md-4 col-6">
+      <div class="gallery-img-container">
+        <img src="/static/images/ouvries_1.jpg" class="gallery-img" alt="Ouvrier agricole">
+      </div>
+    </div>
+  </div>
+</section>
 </div>
 {% endblock %}

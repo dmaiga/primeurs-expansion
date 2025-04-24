@@ -3,56 +3,211 @@
 {% block title %}Contact - PRIMEURS EXPANSION{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-  <h1 class="text-center mb-4">Contactez-nous</h1>
-
-  <div class="row">
-    <!-- Formulaire de contact -->
-    <div class="col-md-6 mb-4">
-      <form>
-        <div class="mb-3">
-          <label for="name" class="form-label">Nom</label>
-          <input type="text" class="form-control" id="name" placeholder="Votre nom">
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="adresse@email.com">
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" rows="4" placeholder="Votre message ici..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-success">Envoyer</button>
-      </form>
-    </div>
-
-    <!-- Coordonnées + réseaux -->
-    <div class="col-md-6">
-      <h4>Nos coordonnées</h4>
-      <p><strong>Email :</strong> contact@primeursexpansion.com</p>
-      <p><strong>Téléphone :</strong> +223 76 00 00 00</p>
-      <p><strong>Adresse :</strong> Bamako, Mali</p>
-
-      <div class="mt-4">
-        <h5>Réseaux sociaux</h5>
-        <a href="https://facebook.com" target="_blank" class="me-3">
-          <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook">
-        </a>
-        <a href="https://instagram.com" target="_blank" class="me-3">
-          <img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram">
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="me-3">
-          <img src="https://cdn-icons-png.flaticon.com/24/733/733561.png" alt="LinkedIn">
-        </a>
-      </div>
-
-      <div class="mt-4">
-        <a href="https://wa.me/22376000000" target="_blank" class="btn btn-outline-success">
-          <img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" class="me-2" alt="WhatsApp">
-          Discuter sur WhatsApp
-        </a>
-      </div>
+<div class="contact-page">
+  <!-- Bannière d'en-tête -->
+  <div class="contact-header bg-success bg-opacity-10 py-5 mb-5">
+    <div class="container text-center">
+      <h1 class="display-5 fw-bold">Contactez notre équipe</h1>
+      <p class="lead">Nous répondons sous 24 heures</p>
     </div>
   </div>
+
+  <div class="container">
+    <div class="row g-5">
+      <!-- Formulaire de contact -->
+      <div class="col-lg-7">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-5">
+            <h2 class="mb-4"><i class="bi bi-envelope-paper text-success me-2"></i>Envoyez un message</h2>
+            
+            <form method="POST" action="{{ url_for('contact') }}" class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="first_name" class="form-label">Prénom*</label>
+                  <input type="text" class="form-control" id="first_name" name="first_name" required>
+                  <div class="invalid-feedback">Veuillez saisir votre prénom</div>
+                </div>
+                
+                <div class="col-md-6">
+                  <label for="last_name" class="form-label">Nom*</label>
+                  <input type="text" class="form-control" id="last_name" name="last_name" required>
+                  <div class="invalid-feedback">Veuillez saisir votre nom</div>
+                </div>
+                
+                <div class="col-12">
+                  <label for="email" class="form-label">Email*</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                  <div class="invalid-feedback">Veuillez saisir un email valide</div>
+                </div>
+                
+                <div class="col-12">
+                  <label for="phone" class="form-label">Téléphone</label>
+                  <input type="tel" class="form-control" id="phone" name="phone">
+                </div>
+                
+                <div class="col-12">
+                  <label for="subject" class="form-label">Sujet*</label>
+                  <select class="form-select" id="subject" name="subject" required>
+                    <option value="" selected disabled>Choisir un sujet...</option>
+                    <option value="Demande commerciale">Demande commerciale</option>
+                    <option value="Demande de prix">Demande de prix</option>
+                    <option value="Partenariat">Partenariat</option>
+                    <option value="Autre">Autre</option>
+                  </select>
+                </div>
+                
+                <div class="col-12">
+                  <label for="message" class="form-label">Message*</label>
+                  <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                  <div class="invalid-feedback">Veuillez saisir votre message</div>
+                </div>
+                
+                <div class="col-12">
+                  <button type="submit" class="btn btn-success btn-lg w-100">
+                    <i class="bi bi-send-fill me-2"></i>Envoyer le message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Informations de contact -->
+      <div class="col-lg-5">
+        <div class="sticky-top" style="top: 20px;">
+          <div class="card border-success shadow-sm">
+            <div class="card-header bg-success text-white">
+              <h3 class="mb-0"><i class="bi bi-building"></i> PRIMEURS EXPANSION</h3>
+            </div>
+            <div class="card-body">
+              <address class="mb-4">
+                <strong><i class="bi bi-geo-alt-fill text-success"></i> Adresse :</strong><br>
+                Kalaban Coura ACI<br>
+                Rue 614, Porte 120<br>
+                Commune V, Bamako<br>
+                <strong>Mali</strong>
+              </address>
+              
+              <h4 class="h5 mt-4"><i class="bi bi-headset text-success"></i> Contacts directs</h4>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <i class="bi bi-telephone-fill text-success"></i>
+                  <a href="tel:+22371002222" class="text-decoration-none"> +223 71 00 22 22</a>
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-whatsapp text-success"></i>
+                  <a href="https://wa.me/22371002222" target="_blank" class="text-decoration-none"> WhatsApp: 71002222</a>
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-envelope-fill text-success"></i>
+                  <a href="mailto:primeurs.expansion@hotmail.fr" class="text-decoration-none"> primeurs.expansion@hotmail.fr</a>
+                </li>
+              </ul>
+              
+              <hr>
+              
+              <h4 class="h5"><i class="bi bi-basket text-success"></i> Produits phares</h4>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <span class="badge bg-success-subtle text-success">Mangues</span>
+                <span class="badge bg-success-subtle text-success">Haricots verts</span>
+                <span class="badge bg-success-subtle text-success">Gombo</span>
+                <span class="badge bg-success-subtle text-success">Arachides</span>
+                <span class="badge bg-success-subtle text-success">Fruits tropicaux</span>
+              </div>
+              
+              <hr>
+              
+              <h4 class="h5"><i class="bi bi-people text-success"></i> Réseaux sociaux</h4>
+              <div class="social-links mt-3">
+                <a href="#" class="btn btn-outline-success btn-sm me-2 mb-2">
+                  <i class="bi bi-facebook"></i> Facebook
+                </a>
+                <a href="#" class="btn btn-outline-success btn-sm me-2 mb-2">
+                  <i class="bi bi-linkedin"></i> LinkedIn
+                </a>
+                <a href="#" class="btn btn-outline-success btn-sm me-2 mb-2">
+                  <i class="bi bi-instagram"></i> Instagram
+                </a>
+                <a href="https://wa.me/22371002222" target="_blank" class="btn btn-success btn-sm mb-2">
+                  <i class="bi bi-whatsapp"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card mt-4 border-success">
+            <div class="card-body">
+              <h4 class="h5"><i class="bi bi-clock text-success"></i> Horaires</h4>
+              <table class="table table-sm">
+                <tbody>
+                  <tr>
+                    <td>Lundi - Vendredi</td>
+                    <td>7h30 - 17h00</td>
+                  </tr>
+                  <tr>
+                    <td>Samedi</td>
+                    <td>8h00 - 13h00</td>
+                  </tr>
+                  <tr>
+                    <td>Dimanche</td>
+                    <td>Fermé</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+   
+    
+  </div>
 </div>
+
+<!-- Styles personnalisés -->
+<style>
+  .contact-header {
+    background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                      url('/static/images/contact-bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .social-links a {
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    transform: translateY(-2px);
+  }
+  
+  .invalid-feedback {
+    display: none;
+    color: #dc3545;
+  }
+  
+  .was-validated .form-control:invalid ~ .invalid-feedback {
+    display: block;
+  }
+</style>
+
+<!-- Script de validation -->
+<script>
+// Validation Bootstrap
+(() => {
+  'use strict'
+  const forms = document.querySelectorAll('.needs-validation')
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
 {% endblock %}

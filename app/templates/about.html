@@ -1,21 +1,164 @@
 {% extends 'base.html' %}
 
-{% block title %}À propos - Barou Import Export{% endblock %}
+{% block title %}À propos - PRIMEURS EXPANSION{% endblock %}
 
 {% block content %}
-  <div class="container mt-4">
-    <h1>À propos de PRIMEURS EXPANSION</h1>
-    <p>
-      Fondée par un passionné du commerce international, PRIMEURS EXPANSION est une entreprise spécialisée dans l'importation et l'exportation de fruits et légumes frais.
-    </p>
-    <p>
-      Nous croyons en la qualité, la fraîcheur et le respect des standards internationaux. Notre mission est de connecter les meilleurs producteurs africains aux marchés internationaux.
-    </p>
-    <p>
-      <strong>Localisation :</strong> Bamako, Mali – avec des partenaires en Europe et en Afrique de l’Ouest.
-    </p>
-    <p>
-      <strong>Nos valeurs :</strong> Intégrité, transparence, durabilité.
-    </p>
+<div class="about-page">
+  <!-- Hero Section -->
+  <div class="hero-section bg-success bg-opacity-10 py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold text-success">PRIMEURS EXPANSION</h1>
+      <p class="lead">Exportateur de produits agricoles frais d'Afrique de l'Ouest depuis 2015</p>
+    </div>
   </div>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Histoire/Mission -->
+      <div class="col-lg-8">
+        <h2 class="mb-4 border-bottom border-success pb-2">Notre Entreprise</h2>
+        <p class="lead">
+          Fondée par des passionnés du commerce international, PRIMEURS EXPANSION est spécialisée dans l'exportation de fruits et légumes frais d'exception.
+        </p>
+        
+        <div class="mission-values mt-5">
+          <h3><i class="bi bi-bullseye text-success"></i> Notre Mission</h3>
+          <p>
+            Connecter les meilleurs producteurs africains aux marchés internationaux en garantissant qualité, fraîcheur et respect des standards internationaux.
+          </p>
+
+          <h3 class="mt-4"><i class="bi bi-stars text-success"></i> Nos Valeurs</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card border-success mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Intégrité</h5>
+                  <p class="card-text">Transactions transparentes et équitables</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card border-success mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Durabilité</h5>
+                  <p class="card-text">Agriculture responsable et traçable</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card border-success mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Innovation</h5>
+                  <p class="card-text">Techniques de conservation avancées</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coordonnées -->
+      <div class="col-lg-4">
+        <div class="card border-success shadow">
+          <div class="card-header bg-success text-white">
+            <h4 class="mb-0"><i class="bi bi-geo-alt"></i> Nos Coordonnées</h4>
+          </div>
+          <div class="card-body">
+            <address>
+              <strong>PRIMEURS EXPANSION</strong><br>
+              Kalaban Coura ACI<br>
+              Rue 614, Porte 120<br>
+              Commune V, Bamako<br>
+              <strong>Mali</strong>
+            </address>
+
+            <ul class="list-unstyled mt-4">
+              <li class="mb-2">
+                <i class="bi bi-telephone text-success me-2"></i>
+                <a href="tel:+22371002222" class="text-decoration-none">+223 71 00 22 22</a>
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-whatsapp text-success me-2"></i>
+                <a href="https://wa.me/22371002222" class="text-decoration-none">71002222</a>
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-envelope text-success me-2"></i>
+                <a href="mailto:primeurs.expansion@hotmail.fr" class="text-decoration-none">primeurs.expansion@hotmail.fr</a>
+              </li>
+            </ul>
+
+            <div class="mt-4">
+              <h5>Heures d'ouverture</h5>
+              <p class="mb-1">Lundi-Vendredi: 7h30-17h</p>
+              <p>Samedi: 8h-13h</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produits Principaux -->
+    <div class="products-section mt-5">
+      <h2 class="mb-4 border-bottom border-success pb-2">Nos Produits Phares</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 border-success">
+            <div class="card-header bg-success text-white">
+              <h5 class="mb-0"><i class="bi bi-mango"></i> Mangues</h5>
+            </div>
+            <div class="card-body">
+              <p>Variétés Kent, Keitt et Ataulfo cultivées selon les standards internationaux</p>
+              <span class="badge bg-success">Export principal</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 border-success">
+            <div class="card-header bg-success text-white">
+              <h5 class="mb-0"><i class="bi bi-flower1"></i> Haricots Verts</h5>
+            </div>
+            <div class="card-body">
+              <p>Selection premium, calibrés et conditionnés sous vide</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 border-success">
+            <div class="card-header bg-success text-white">
+              <h5 class="mb-0"><i class="bi bi-basket"></i> Produits Divers</h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2 text-success"></i> Gombo</li>
+                <li><i class="bi bi-check2 text-success"></i> Arachides</li>
+                <li><i class="bi bi-check2 text-success"></i> Fruits tropicaux</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carte d'emplacement -->
+    
+  </div>
+</div>
+
+<style>
+  .about-page {
+    background: url('/static/images/bg-pattern.png') repeat;
+  }
+  .hero-section {
+    background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                      url('/static/images/mango-field.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .card.border-success:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.2);
+  }
+</style>
 {% endblock %}
